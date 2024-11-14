@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex flex-col justify-between"
+  >
+    <div class="container mx-auto py-8 px-4">
+      <h1 class="text-5xl font-bold text-center text-yellow-500 mb-12">
+        Photo Gallery
+      </h1>
+
+      <!-- Search Box -->
+      <div class="flex justify-center mb-8">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for images..."
+          class="w-full max-w-md p-3 rounded-l-md text-gray-900 focus:outline-none focus:ring focus:ring-yellow-400"
+        />
+        <button
+          id="searchButton"
+          class="px-6 py-3 bg-yellow-500 text-gray-900 rounded-r-md font-semibold hover:bg-yellow-600"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div
+        id="loadingIndicator"
+        class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 hidden"
+      >
+        <p class="text-white text-lg font-bold">Loading...</p>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        id="gallery"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+      ></div>
+    </div>
+
+    <!-- Fixed Pagination -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-gray-800 py-4 flex justify-center items-center space-x-6"
+    >
+      <button
+        id="prevPage"
+        class="px-5 py-3 bg-yellow-500 text-gray-900 rounded-md font-semibold hover:bg-yellow-600 disabled:opacity-50"
+        disabled
+      >
+        Previous
+      </button>
+      <span id="pageInfo" class="text-xl font-medium text-yellow-500"></span>
+      <button
+        id="nextPage"
+        class="px-5 py-3 bg-yellow-500 text-gray-900 rounded-md font-semibold hover:bg-yellow-600"
+      >
+        Next
+      </button>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/fc71634d2f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
